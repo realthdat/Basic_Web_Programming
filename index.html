@@ -1,198 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <style>
-    #logo {
-      width: 150px;
-      height: 150px;
-    }
-    
-    a{
-      font-size: 20px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      background-color: #47555e;
-      padding: 10px;
-    }
-
-    header h1 {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    header img {
-      width: 50px;
-      height: 50px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-    }
-
-    nav ul {
-      list-style: none;
-      display: inline-flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav li {
-      margin: 0 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: black;
-    }
-
-    main {
-      background-color: white;
-      border: 1px solid black;
-      border-radius: 5px;
-      padding: 20px;
-      text-align: center;
-      justify-content: center;
-    }
-
-    footer {
-      padding: 20px;
-      text-align: center;
-      background-color: lightgray;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: lightgray;
-      padding: 40px;
-      border-radius: 10px;
-    }
-
-    .form-group label {
-      font-size: 20px;
-      text-align: right;
-      width: 150px;
-      padding-right: 20px;
-    }
-
-    .input-row {
-      display: flex;
-      align-items: center;
-      margin-right: 180px;
-    }
-    
-    .form-group input[type="text"],input[type="email"]{
-      font-size: 18px;
-      padding: 10px;
-      margin: 10px 0;
-      width: 300px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    input[type="submit"] {
-      font-size: 18px;
-      font-weight: bold;
-      padding: 10px 20px;
-      margin-top: 20px;
-      margin-left: 150px;
-      background-color: green;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .delete-button {
-      padding: 10px 20px;
-      background-color: #ffbbbb;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      opacity: 0.0;
-    }
-
-    .delete-button:hover {
-      background-color: #fe0000;
-    }
-
-    .export-to-excel {
-      position: absolute;
-      right: 30px;
-      margin: 0 auto;
-      padding: 8px 20px;
-      background-color: #7ebffb;
-      color: white;
-      border-radius: 5px;
-      font-size: 15px;
-      cursor: pointer;
-      font-weight: bold;
-      border-color: white;
-    }
-
-    .export-to-excel:hover {
-      background-color: #0051ff;
-    }
-
-    p1 {
-      font-size: 25px;
-      font-weight: bold;
-      text-align: center;
-    }
-      
-    table {
-    margin: 0 auto; 
-    margin-top: 25px;
-    border-collapse: collapse;
-    width: 50%;
-    }
-
-    th, td {
-    border: 1px solid gray;
-    padding: 8px;
-    text-align: left;
-    }
-
-    th {
-    background-color: lightgray;
-    font-weight: bold;
-    }
-    
-    tr{
-      font-size: 18px;
-    }
-
-    .error {
-      color: red;
-    }
-
-    .selected {
-    background-color: rgb(223, 223, 223);
-  }
-
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Information System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
     <img id="logo" src="logo.png" alt="Logo">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <h1 style="color: white; font-family: 'Roboto Mono', -apple-system; font-weight: 100;">Welcome to My Webpage.</h1>
+    <h1>Welcome to My Webpage.</h1>
   </header>
 
   <nav>
     <ul>
-      <li><a href="#">Home</a></li> <!-- Update soon! -->
+      <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Services</a></li>
       <li><a href="#">Contact</a></li>
@@ -200,39 +26,36 @@
   </nav>
 
   <main>
-    <h2 style="font-size: 35px;">Student Information System</h2>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <h2>Student Information System</h2>
+
     <form class="form-group" id="studentForm">
       <div class="input-row">
-        <label>ID:</label>
+        <label for="studentId">ID:</label>
         <input type="text" id="studentId" required />
       </div>
 
       <div class="input-row">
-        <label>Name:</label>
+        <label for="studentName">Name:</label>
         <input type="text" id="studentName" required />
       </div>
 
       <div class="input-row">
-        <label>Email:</label>
+        <label for="studentEmail">Email:</label>
         <input type="email" id="studentEmail" required />
       </div>
 
       <div class="input-row">
-        <label>GPA:</label>
+        <label for="studentGpa">GPA:</label>
         <input type="text" id="studentGpa" required />
       </div>
 
-      <div class="input-row"><input type="submit" value="Submit" />
-        <button class="delete-button" id="deleteButton" style="font-size: 18px;
-        font-weight: bold;
-        padding: 10px 25px;
-        margin-top: 20px;
-        margin-left: 50px;
-        opacity: 1.0;">Delete</button></div>
+      <div class="input-row">
+        <input type="submit" value="Submit" />
+        <button type="button" class="delete-button" id="deleteButton">Delete</button>
+      </div>
     </form>
 
-    <p1>Table shows student's information</p1>
+    <p class="info-label">Table shows student's information</p>
     <button class="export-to-excel" id="export-to-excel">Export to Excel</button>
 
     <table id="studentTable">
@@ -247,93 +70,22 @@
       </thead>
       <tbody></tbody>
     </table>
+  </main>
 
-    <script>
-      $("#studentForm").submit(function (event) {
-        event.preventDefault();
-        var studentId = $("#studentId").val();
-        var studentName = $("#studentName").val();
-        var studentEmail = $("#studentEmail").val();
-        var studentGpa = $("#studentGpa").val();
-        if (!$.isNumeric(studentId)) {
-          alert("ID must be a number");
-          return;
-        }
-        if (!$.isNumeric(studentGpa)) {
-          alert("GPA must be a number");
-          return;
-        }
-        var row = "<tr><td>" + studentId + "</td><td>" + studentName + "</td><td>" + studentEmail + "</td><td>" + studentGpa + "</td><td><button class='delete-button'>Delete</button></td></tr>";
-        $("#studentTable tbody").append(row);
-        $("#studentForm")[0].reset();
-      });
+  <footer>
+    <p>&copy; 2023. All rights reserved.</p>
+    <p>Today's date: <span id="date"></span></p>
+  </footer>
 
-      document.querySelector("#deleteButton").addEventListener("click", function() {
-    document.querySelectorAll(".selected").forEach(function(selectedRow) {
-      selectedRow.remove();
-    });
-  });
-    
+  <!-- JS Libraries -->
+  <!-- Load JS Libraries from CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
 
-  document.querySelector("#studentTable tbody").addEventListener("click", function(event) {
-    if (event.target.tagName === "TD") {
-      event.target.parentNode.classList.toggle("selected");
-    }
-  });
 
-      $(document).on("click", ".delete-button", function () {
-        $(this).closest("tr").remove();
-      });
-      
-    </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.core.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#export-to-excel").click(function() {
-      var tableData = [];
-    $("#studentTable tbody tr").each(function () {
-      var rowData = [];
-      $(this).find("td").each(function () {
-        rowData.push($(this).text());
-      });
-      rowData.pop(); //clear delete button
-      tableData.push(rowData);
-    });
-
-    var wb = XLSX.utils.book_new();
-    var ws = XLSX.utils.aoa_to_sheet(tableData);
-    XLSX.utils.book_append_sheet(wb, ws, "Student Information");
-
-    var wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
-    var blob = new Blob([wbout], { type: "application/octet-stream" });
-    saveAs(blob, "student_Information.xlsx");
-  });
-});
-</script>
-
-</body>
-</main>
-
-<footer>
-  <p>Copyright &copy; 2023. All rights reserved.</p>
-  
-  <p style="background-color: lightgray;">Today's date: <span id="date"></span></p>
-  <script>
-    function displayDate() {
-      var currentDate = new Date();
-      var day = currentDate.getDate();
-      var month = currentDate.getMonth() + 1; // January is 0
-      var year = currentDate.getFullYear();
-      var dateDiv = document.getElementById("date");
-      dateDiv.innerHTML = day + "/" + month + "/" + year;
-    }
-    displayDate();
-  </script>
-</footer>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
 
 </body>
 
