@@ -17,12 +17,14 @@ This is a simple web-based application that allows users to manage student recor
 - [FileSaver.js](https://github.com/eligrey/FileSaver.js) for file download
 
 ## 📂 Project Structure
+```
 project/
-├── index.html # Main HTML file
-├── styles.css # Stylesheet
-├── script.js # JavaScript logic
-├── logo.png # Site logo
-└── README.md # Project documentation
+├── index.html    # Main HTML file
+├── styles.css    # Stylesheet for styling the webpage
+├── script.js     # JavaScript file for interactivity
+├── logo.png      # Project logo image
+└── README.md     # Project documentation
+```
 
 
 ## 💡 How to Use
